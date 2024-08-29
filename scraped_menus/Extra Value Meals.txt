@@ -1,0 +1,18 @@
+1. Big Mac Meal
+2. Double McChicken Meal
+3. Double Cheese Burger Meal
+4. Double Spicy McCrispy Meal
+5. Double Quarter Pounder Meal
+6. Double Filet-o-Fish Meal
+7. McChicken Meal
+8. Spicy McCrispy Meal
+9. Grand Chicken Spicy Meal
+10. McArabia Meal
+11. McRoyale Meal
+12. Quarter Pounder Meal
+13. Filet-o-Fish Meal
+14. 3 Pieces Crispy Chicken Meal
+15. 2 Pieces Crispy Chicken Meal
+16. 9 Pieces Chicken McNuggets Meal
+17. 6 Pieces Chicken McNuggets Meal
+18. Chicken Mac Meal
