@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Declare an associative array with menu categories and their respective URLs
+# declare an array 
 declare -A menu_urls=(
     ["Breakfast"]="https://mcdonalds.com.pk/full-menu/breakfast/"
     ["Beef"]="https://mcdonalds.com.pk/full-menu/beef/"
@@ -16,26 +16,24 @@ declare -A menu_urls=(
     ["Fries and Sides"]="https://mcdonalds.com.pk/full-menu/fries-and-sides/"
 )
 
-# Create a directory to store the menu files
+#create the folder 
 output_dir="scraped_menus"
 mkdir -p "$output_dir"
 echo "Created directory: $output_dir"
 
-# Loop through each menu category in the associative array
 for category_name in "${!menu_urls[@]}"; do
     echo "Processing category: $category_name"
     
     webpage_content=$(curl -s "${menu_urls[$category_name]}")
-
-    # Check if the menu category is found on the webpage
+#it chexk  the menu category  is found on menu_url 
     if echo "$webpage_content" | pup 'span.category-title text{}' | grep -q "$category_name"; then
-        # Format the file name by removing special characters
+        
         sanitized_name=$(echo "$category_name" | tr -d '&;')
         
-        # Extract item names using pup and format them
+      
         extracted_items=$(echo "$webpage_content" | pup 'span.categories-item-name text{}')
         
-        # Save the extracted items to a file with line numbers
+       #save the file 
         output_file="$output_dir/$sanitized_name.txt"
         echo "$extracted_items" | awk '{print NR ". " $0}' > "$output_file"
         
